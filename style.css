@@ -1,0 +1,135 @@
+/* Global Styles */
+
+  body{
+    background-color: #f6f6f6;
+  }
+  a{
+    color: darkgreen;
+  }
+  a:hover{
+    color: #bcaa96;
+  }
+  html{
+    box-sizing: border-box;
+  }
+  html,body{
+    height: 100%;
+  }
+  *, *::after, *::before
+  {
+    box-sizing: inherit;
+    margin: 0%;
+  }
+  .btn
+  {
+    background-color: #3c8453;
+    color: #f6f6f6;
+    text-decoration: none;
+  }
+  footer .btn:hover{
+    color: #bcaa96;
+  }
+
+
+/* Index */
+.home{
+  display: flex;
+  flex-direction: column;
+}
+.home,.resume
+{
+  background: url(placeholder-images/bg-home-office-city.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.home .content-vg
+{
+ background-color: rgba(255, 255, 255,0.9);
+  padding: 10px;
+}
+.home .content-wrapper
+{
+  flex: 1 0 auto;
+}
+ .content-wrapper
+{
+ 
+  max-width: 900px;
+  margin: 0 auto;
+   padding: 30px;
+}
+
+.project-item
+{
+  display: flow-root;
+}
+/* Resume */
+.resume header::before
+{
+  background: url(placeholder-images/bg-home-office-city.jpg) center/cover;
+  content: "";
+  display: block;
+  height: 375px;
+}
+
+.project-item img
+{
+    float: left;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.resume-section
+{
+  margin-bottom: 50px;
+}
+.resume-section h2{
+  border-bottom: 2px dashed lightgray;
+}
+.download
+{
+  position: fixed;
+  top: 5px;
+  left: 5px;
+}
+/* profile */
+
+
+/* projects */
+
+
+/* Education */
+
+
+/* Footer */
+footer
+{
+ background-color: darkgray;
+ color: #d3d4d6;
+ display: flex;
+ justify-content: space-between;
+ padding: 0 10px;
+}
+footer a{
+ 
+   color: #d3d4d6;
+}
+footer a:hover
+{
+  color: #3c8453;
+}
+.social
+{
+  list-style-type: none;
+  padding: 0px;
+}
+.social li{
+  display: inline-block;
+  margin-left: 10px;
+}
+.social img:hover{
+  opacity: 50%;
+}
+.social img{
+  width: 32px;
+}
