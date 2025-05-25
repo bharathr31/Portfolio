@@ -1,16 +1,173 @@
-/* Global Styles */
+/* Modifications to base model */
+/* 1 good hover effect for project item like a highlight effect using box shadow */
+.project-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  background-color: #b7dcb7; 
+}
+/* 2 making the images stand out more */
+.project-item img {
+  border-radius: 10px;
+  border: 1px solid #ccc;
 
+}
+/* 3 making the download button stand out more */
+.download {
+  background-color: #2b6e44;
+  padding: 10px 15px;
+  font-weight: bold;
+}
+.download:hover {
+  background-color: #245a38;
+}
+/* 4  clamp function for  responsiveness*/
+h1 {
+  font-size: clamp(3rem, 7vw, 7rem);
+}
+h2 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+}
+/* 5 skill progress bars */
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill p {
+  margin: 0 0 5px 0;
+  font-weight: bold;
+}
+
+.skill-bar {
+  background-color: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: #3c8453;
+  border-radius: 10px 0 0 10px;
+  transition: width 0.5s ease-in-out;
+}
+/*6 smooth flow */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/*7  responsive web design for footer */
+@media screen and (max-width: 600px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  footer p {
+    margin-bottom: 10px;
+  }
+}
+
+/* 8 making the certification section more intresting */
+
+.certifications-section {
+  margin-bottom: 2.5rem;
+}
+.certifications-section h2 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+  border-bottom: 3px solid #2b6e44;
+  padding-bottom: 0.8rem;
+  text-align: left;
+  font-family: "Caveat", cursive;
+  font-weight: 700;
+}
+.certifications-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.certifications-list li {
+  padding: 1.5rem;
+  border-left: 5px solid #2b6e44;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #34495e;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.8em; 
+}
+.certifications-list li:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #b7dcb7; 
+}
+.certifications-list .certification-content {
+  flex-grow: 1; 
+}
+.certifications-list strong {
+  font-weight: 700;
+  color: #3c8453;
+  font-size: 1.8rem;
+  margin-right: 0.5em; 
+}
+.certifications-list img {
+  height: 1.2em; 
+  flex-shrink: 0; 
+}
+/* 9 for extra ciricular activites */
+
+.resume-section.extra-curricular-activities ul {
+  list-style: none;
+  padding: 0; 
+  display: flex; 
+  flex-direction: column; 
+ gap: 1.2rem;
+}
+
+.resume-section.extra-curricular-activities li {
+  padding: 1.5rem; 
+  border-left: 5px solid #2b6e44;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; 
+  font-size: 1.6rem; 
+  line-height: 1.7; 
+  color: #34495e; 
+}
+
+.resume-section.extra-curricular-activities li:hover {
+  transform: scale(1.01); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  background-color: #b7dcb7; 
+} 
+/* Global Styles */
   body{
     background-color: #f6f6f6;
+    margin: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
   }
   a{
     color: darkgreen;
   }
   a:hover{
     color: #bcaa96;
+    text-decoration: none;
   }
   html{
     box-sizing: border-box;
+    font-size: 62.5% ;
   }
   html,body{
     height: 100%;
@@ -18,33 +175,52 @@
   *, *::after, *::before
   {
     box-sizing: inherit;
-    margin: 0%;
   }
-  .btn
+  h1,h2,h3{
+    font-family: "Caveat", cursive;
+    font-weight: 400;
+    margin: 0;
+  }
+  .btn, .download
   {
     background-color: #3c8453;
     color: #f6f6f6;
     text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    display: inline-block;
+    padding: 7px;
+    letter-spacing: .1em;
+    line-height: 1;
+    border-radius: 4px;
   }
-  footer .btn:hover{
-    color: #bcaa96;
+  h1 {
+    font-size: 7rem;
+    line-height: 0.85;
+    margin-bottom: 10px;
   }
-
+  h2 {
+    font-size: 3.6rem;
+  }
+  h3 {
+    font-size: 2.4rem;
+  }
 
 /* Index */
 .home{
   display: flex;
   flex-direction: column;
 }
-.home,.resume
+.home
 {
-  background: url(placeholder-images/bg-home-office-city.jpg);
+  background: url(placeholder-images/wallpaper.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+    
 }
-.home .content-vg
+.content-vg
 {
- background-color: rgba(255, 255, 255,0.9);
+ background-color: rgba(119, 110, 110, 0.9);
   padding: 10px;
 }
 .home .content-wrapper
@@ -72,13 +248,6 @@
   height: 375px;
 }
 
-.project-item img
-{
-    float: left;
-    width: 300px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
 .resume-section
 {
   margin-bottom: 50px;
@@ -92,31 +261,97 @@
   top: 5px;
   left: 5px;
 }
-/* profile */
+@media screen and (max-width:1200px){
+    .download{
+        position: absolute;
+    }
+}
+@media screen and (max-width:580px) {
+    .resume header::before{
+        height: 200px;
+    }
+    h1{
+        font-size: 4.5rem;
+    }
+    h2{
+        font-size: 3rem;
+    }
+}
 
 
 /* projects */
-
+.project-item img
+{
+    float: left;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+@media screen and (min-width:860px) {
+    .project-item{
+        display: flow-root;
+    }
+    .project-item img{
+        float: left;
+        margin-right: 20px;
+    }
+}
+@media screen and (min-width:650px) and (max-width:859px) {
+    .project-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 20px;
+    }
+    .project-item img {
+        width: 100%;
+    }
+}
+@media screen and (max-width:500px) {
+    .project-item img{
+        width : 100%;
+        margin-bottom: 10px;
+    }
+}
 
 /* Education */
+.education-item{
+    margin: 30px 0;
+}
+.education-item p{
+    margin:0;
+}
+
+/* Technical skills */
+.sublist
+{
+   margin-bottom: 20px;
+}
+.sublist li
+{
+  font-weight: 500;
+  
+}
 
 
 /* Footer */
+
 footer
 {
- background-color: darkgray;
+ background-color: rgb(119, 110, 110);
  color: #d3d4d6;
  display: flex;
  justify-content: space-between;
- padding: 0 10px;
+ padding: 0px 10px;
 }
 footer a{
- 
    color: #d3d4d6;
 }
 footer a:hover
 {
-  color: #3c8453;
+  color: black;
+}
+footer .btn:hover{
+  color: #bcaa96;
 }
 .social
 {
@@ -132,4 +367,17 @@ footer a:hover
 }
 .social img{
   width: 32px;
+}
+@media screen and (min-width:860px){
+    footer{
+        display: flex;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+}
+@media screen and (max-width:859px){
+    footer{
+        text-align: center;
+        padding: 10px;
+    }
 }
